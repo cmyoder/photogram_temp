@@ -10,7 +10,7 @@ class LikesController < ApplicationController
   end
 
   def index
-    @likes = Like.all
+    @likes = Like.page(params[:page]).per(10)
 
     render("likes/index.html.erb")
   end
