@@ -49,3 +49,4 @@ gem 'inherited_resources', :git => 'https://github.com/activeadmin/inherited_res
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem "rollbar"
