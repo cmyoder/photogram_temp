@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "likes#index"
   # Routes for the Friend_request resource:
   # CREATE
   get "/friend_requests/new", :controller => "friend_requests", :action => "new"
