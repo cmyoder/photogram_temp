@@ -1,4 +1,14 @@
 class LikesController < ApplicationController
+  before_action :current_user_must_be_like_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_like_user
+    like = Like.find(params[:id])
+
+    unless current_user == like.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @likes = Like.all
 
